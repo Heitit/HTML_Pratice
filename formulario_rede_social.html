@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Survey Form</title>
+  </head>
+
+  <body>
+    <div>
+      <h1 id="title">Saúde e Redes Sociais</h1>
+
+      <p id="description">Levantamento de dados para média de tempo de uso das <b>redes sociais</b>.</p>
+
+      <form id="media-tempo">
+
+        <div class="identificacao">
+          <label for="name" id="name-label">Nome (Opcional)</label>
+          <input required type="text" name="name" id="name" placeholder="Coloque o seu nome">
+      
+          <label for="email" id="email-label">Email</label>
+          <input required type="email" name="email" id="email" placeholder="Coloque o seu email">
+
+          <label id="number-label">Idade</label>
+          <input type="number" id="number" min="15" max="60" placeholder="Idade">
+
+          <label for="celular" id="celular-label">Celular (Apenas Números)</label>
+          <input type="tel" id="celular" name="celular" placeholder="(99) 99999-9999" 
+          pattern="\d*"
+          oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 11)"
+          class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-150 text-lg"
+          maxlength="11"
+          required>
+        </div>
+
+        <div class="ocupacao">
+          <p>Atualmente, qual é a sua ocupação?</p>
+
+          <select id="dropdown" value="Selecione uma opção">
+            <option value="" disabled selected>Ocupação</option>
+            <option value="Estudante">Estudante</option>
+            <option value="Autônomo">Autônomo</option>
+            <option value="Desempregado">Desempregado</option>
+            <option value="Concursado">Concursado</option>
+            <option value="Prefiro não dizer">Prefiro não dizer</option>
+            <option value="outro">Outro</option>
+          </select>
+        </div>
+
+        <div class="rede-social">
+          <p>Das opções listadas, qual é a sua rede social favorita?</p>
+
+          <select id="dropdown" value="Selecione a mídia">
+            <option value="" disabled selected>Mídia</option>
+            <option value="WhatsApp">WhatsApp</option>
+            <option value="Instagram">Instagram</option>
+            <option value="Facebook">facebook</option>
+            <option value="YouTube">YouTube</option>
+            <option value="TikTok">TikTok</option>
+            <option value="X (Antigo Twitter)">X (Antigo Twitter)</option>
+            <option value="Kwai">Kwai</option>
+            <option value="Outro">Outro</option>
+          </select>
+        </div>
+
+        <div>
+          <p>Qual seria essa outra rede socia? (Opcional)</p>
+
+          <textarea 
+          name="outro" 
+          rows="1" 
+          cols="20" 
+          placeholder="Outra rede social..."
+          ></textarea>
+        </div>
+
+        <div class="quantas-horas">
+          <p>Quantas horas por dia você costuma usar?</p>
+
+          <select id="dropdown" value="Selecione uma opção">
+            <option value="" disabled selected>Quantidade de tempo</option>
+            <option value="30 minutos">30 minutos</option>
+            <option value="1 hora">1 hora</option>
+            <option value="De 1 à 2 horas">De 1 à 2 horas</option>
+            <option value="De 2 à 3 horas">De 2 à 3 horas</option>
+            <option value="De 3 à 4 horas">De 3 à 4 horas</option>
+            <option value="De 4 à 5 horas">De 4 à 5 horas</option>
+            <option value="De 5 à 6 horas">De 5 à 6 horas</option>
+            <option value="Mais 6 horas">Mais de 6 horas</option>
+          </select>
+        </div>
+
+        <div class="sentimento">
+          <p>Quando você está a utilizando, que sentimentos essa rede lhe causa?</p>
+          <input type="checkbox" id="alegria" name="sentimento" value="alegria">
+          <label for="alegria">Alegria/Contentamento</label>
+
+          <input type="checkbox" id="conexao" name="sentimento" value="conexao">
+          <label for="conexao">Conexão/Pertencimento</label>
+
+          <input type="checkbox" id="validacao" name="sentimento" value="validacao">
+          <label for="validacao">Validação/Autoestima Elevada</label>
+
+          <input type="checkbox" id="curiosidade" name="sentimento" value="curiosidade">
+          <label for="curiosidade">Curiosidade/Novidade</label>
+
+          <input type="checkbox" id="alivio" name="sentimento" value="alivio">
+          <label for="alivio">Alívio do Tédio</label>
+
+          <input type="checkbox" id="ansiedade" name="sentimento" value="ansiedade">
+          <label for="ansiedade">Ansiedade/Pressão</label>
+
+          <input type="checkbox" id="inveja" name="sentimento" value="inveja">
+          <label for="inveja">Inveja/Insatisfação</label>
+
+          <input type="checkbox" id="isolamento" name="sentimento" value="isolamento">
+          <label for="isolamento">Isolamento/Solidão</label>
+
+          <input type="checkbox" id="raiva" name="sentimento" value="raiva">
+          <label for="raiva">Raiva/Frustração</label>
+
+          <input type="checkbox" id="estresse" name="sentimento" value="estresse">
+          <label for="estresse">Estresse Visual/Fadiga</label>
+
+          <input type="checkbox" id="inspiracao" name="sentimento" value="inspiracao">
+          <label for="inspiracao">Inspiração/Motivação</label>
+
+          <input type="checkbox" id="nocao-tempo" name="sentimento" value="nocao-tempo">
+          <label for="nocao-tempo">Perda de Noção de Tempo</label>
+        </div>
+
+        <div class="sentimento-outro">
+          <p>Se sentir algo que não foi listado, escreva abaixo:</p>
+          <textarea
+          name="sensacao-outro"
+          rows="2"
+          cols="20"
+          placeholder="Descreva aqui..."
+        ></textarea>
+        </div>
+
+        <div class="comentarios">
+          <p>Algum comentário ou sugestão?</p>
+          <label for="enviar"></label>
+          <textarea 
+            name="commentario" 
+            rows="2" 
+            cols="20" 
+            placeholder="Coloque o seu comentário..."
+          ></textarea>
+
+          <br>
+          <br>
+
+          <button type="submit" id="enviar">Enviar</button>
+        </div>
+      </form>
+    </div>
+
+  </body>
+</html>
